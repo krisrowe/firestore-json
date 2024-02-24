@@ -9,7 +9,7 @@
             "runtimeArgs": ["run", "start", "--"],
             "args": [
                 "${input:operation}",
-                "sample.json",
+                "${input:fileName}",
                 "--project=${input:projectId}",
                 "--service-account-key=${input:serviceAccountKeyPath}"
             ],
@@ -24,6 +24,12 @@
             "description": "Select operation:",
             "options": ["import", "export"],
             "default": "import"
+        },
+        {
+            "id": "fileName",
+            "type": "promptString",
+            "description": "File name:",
+            "default": "data.json"
         },
         {
             "id": "projectId",
