@@ -1,0 +1,33 @@
+{
+  "name": "firestore-json",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/krisrowe/firestore-json.git"
+  },
+  "keywords": [
+    "Firestore",
+    "Firebase",
+    "JSON",
+    "GCP",
+    "Google",
+    "Cloud",
+    "import",
+    "export"
+  ],
+  "author": "Kristopher D. Rowe",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/krisrowe/firestore-json/issues"
+  },
+  "homepage": "https://github.com/krisrowe/firestore-json#readme",
+  "dependencies": {
+    "@google-cloud/firestore": "^7.3.0"
+  }
+}
