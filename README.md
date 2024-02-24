@@ -1,6 +1,8 @@
 # firestore-json
 
-Simple CLI tool for importing and exporting JSON data to and from Firebase (Firestore), supporting Google Cloud Platform (GCP) projects.
+Super simple importing and exporting of JSON data to and from Firebase (Firestore).
+
+Doubles as either a command-line tool or a resuable node.js package/library for use in your own applications.
 
 # Example JSON File
 
@@ -91,3 +93,47 @@ npm start import -- [file-name.json] --project=[my-gcp-project-id] --service-acc
 ```
 
 Replace `[file-name.json]` with the desired outfile file path/name and `[my-gcp-project-id]` with your actual GCP project ID.
+
+# Use it in Your Own Node.js Application
+
+First, ensure you've installed `firestore-json` in your project:
+
+```bash
+npm install @kdrowe/firestore-json
+```
+
+## Example: Importing JSON Data to Firestore
+
+```javascript
+const firestoreJson = require('@kdrowe/firestore-json');
+
+// Configuration for importing
+const importConfig = {
+  fileName: 'path/to/your/input.json', // Path to the JSON file you want to import
+  projectId: 'your-gcp-project-id', // Your GCP Project ID
+  serviceAccountKeyPath: 'path/to/your/serviceAccountKey.json' // Path to your Firebase service account key file
+};
+
+// Execute the import
+firestoreJson.import.execute(importConfig)
+  .then(() => console.log('Import successful'))
+  .catch((error) => console.error('Import failed', error));
+```
+
+## Example: Exporting Firestore Data to JSON
+
+```javascript
+const firestoreJson = require('@kdrowe/firestore-json');
+
+// Configuration for exporting
+const exportConfig = {
+  projectId: 'your-gcp-project-id', // Your GCP Project ID
+  serviceAccountKeyPath: 'path/to/your/serviceAccountKey.json', // Path to your Firebase service account key file
+  fileName: 'path/to/your/output.json' // Path where you want to save the exported JSON
+};
+
+// Execute the export
+firestoreJson.export.execute(exportConfig)
+  .then(() => console.log('Export successful'))
+  .catch((error) => console.error('Export failed', error));
+```
