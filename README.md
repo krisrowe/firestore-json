@@ -1,6 +1,6 @@
 # firestore-json
 
-A Node.js application for importing and exporting JSON data to and from Firebase (Firestore), supporting Google Cloud Platform (GCP) projects.
+Simple CLI tool for importing and exporting JSON data to and from Firebase (Firestore), supporting Google Cloud Platform (GCP) projects.
 
 # Example JSON File
 
