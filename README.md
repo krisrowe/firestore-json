@@ -2,45 +2,56 @@
 
 A Node.js application for importing and exporting JSON data to and from Firebase (Firestore), supporting Google Cloud Platform (GCP) projects.
 
-## Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
-
-### Prerequisites
+# Prerequisites
 
 - Node.js installed on your machine
-- Cloned the repository to your local machine
 
-### Installing
+# Use without cloning this repo locally
+
+Below are example commmands that can be run from anywhere that node.js is installed to import and export data to/from Firestore. 
+
+Command-line parameters explained:
+* **--project** specifies the GCP project ID
+* **--service-account-key** specifies the local file name, or path and file name, for the json key file of a service account in the GCP project that has access to the Firestore database
+
+## Import
+
+```bash
+npx @kdrowe/firestore-json import -- my-data.json --project=$PROJECT_ID --service-account-key=key.json
+```
+
+## Export
+
+```bash
+npx @kdrowe/firestore-json export -- my-data.json --project=$PROJECT_ID --service-account-key=key.json
+```
+
+# Installed Usage
+
+## Install Locally
+
+Clone this repo, then run the following command:
 
 ```bash
 npm install
 ```
 
-### Configuration
-
-Before you begin using the application, ensure you have your Firebase project configured and your Google Cloud Platform project ID ready.
-
-## Usage
-
-This application supports importing and exporting JSON data to Firebase. Here are the commands to use each functionality:
-
-### Importing Data
+## Importing Data
 
 To import data from a JSON file into your Firestore datbase, use the following command:
 
 ```bash
-npm start import [file-name.json] --project=[my-gcp-project-id]
+npm start import -- [file-name.json] --project=[my-gcp-project-id] --service-account-key=key.json
 ```
 
 Replace `[file-name.json]` with the path to your JSON file and `[my-gcp-project-id]` with your actual GCP project ID.
 
-### Exporting Data
+## Exporting Data
 
 To export data to a JSON file from your Firestore database, use the following command:
 
 ```bash
-npm start import [file-name.json] --project=[my-gcp-project-id]
+npm start import -- [file-name.json] --project=[my-gcp-project-id] --service-account-key=key.json
 ```
 
 Replace `[file-name.json]` with the desired outfile file path/name and `[my-gcp-project-id]` with your actual GCP project ID.
